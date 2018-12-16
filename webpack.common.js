@@ -23,7 +23,7 @@ const webpackConfig = {
     globalObject: 'this' // for node js import
   },
   resolve: {
-    extensions: ['ts', 'tsx', '.js', '.jsx' ],
+    extensions: ['.ts', '.tsx', '.js', '.jsx' ],
     modules: ['node_modules']
   },
   module: {
