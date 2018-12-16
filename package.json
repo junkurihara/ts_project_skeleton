@@ -1,0 +1,28 @@
+{
+  "name": "project_skeleton_ts",
+  "version": "0.0.1",
+  "description": "TypeScript project skeleton",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "nyc mocha --recursive $(find test -name '*.spec.ts')",
+    "tsc": "tsc --build ./tsconfig.json",
+    "build": "webpack --config ./webpack.config.js",
+    "cleanup": "rm -rf ./dist coverage .nyc_output ./node_modules"
+  },
+  "author": "Jun Kurihara",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "source-map-support": "^0.5.9",
+    "ts-loader": "^5.3.1",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {}
+}
