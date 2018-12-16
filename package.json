@@ -5,24 +5,45 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "nyc mocha --recursive $(find test -name '*.spec.ts')",
+    "test:bundle": "yarn webpack && cross-env TEST_ENV=bundle yarn test",
+    "karma": "cross-env TEST_ENV=source ./node_modules/.bin/karma start",
+    "karma:bundle": "yarn webpack && cross-env TEST_ENV=bundle karma start",
+    "karma:window": "yarn webpack && cross-env TEST_ENV=window karma start",
     "tsc": "tsc --build ./tsconfig.json",
-    "build": "webpack --config ./webpack.config.js",
-    "cleanup": "rm -rf ./dist coverage .nyc_output ./node_modules"
+    "webpack": "webpack --mode development --config webpack.dev.js",
+    "html": "yarn webpack && yarn html:source && yarn html:bundle && yarn html:window",
+    "html:source": "cross-env TEST_ENV=source NODE_ENV=html yarn webpack",
+    "html:bundle": "cross-env TEST_ENV=bundle NODE_ENV=html yarn webpack",
+    "html:window": "cross-env TEST_ENV=window NODE_ENV=html yarn webpack",
+    "build": "yarn tsc && yarn webpack",
+    "cleanup": "rm -rf ./dist coverage .nyc_output ./node_modules ./test/html/*.bundle.js ./test/html/test.html"
   },
   "author": "Jun Kurihara",
   "license": "MIT",
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.15",
     "chai": "^4.2.0",
+    "cross-env": "^5.2.0",
+    "jsdom": "^13.1.0",
+    "karma": "3.1.3",
+    "karma-chrome-launcher": "2.2.0",
+    "karma-cli": "2.0.0",
+    "karma-coverage": "1.1.2",
+    "karma-mocha": "1.3.0",
+    "karma-mocha-reporter": "2.2.5",
+    "karma-webpack": "3.0.5",
     "mocha": "^5.2.0",
+    "mocha-sinon": "^2.1.0",
     "nyc": "^13.1.0",
     "source-map-support": "^0.5.9",
     "ts-loader": "^5.3.1",
     "ts-node": "^7.0.1",
     "typescript": "^3.2.2",
     "webpack": "^4.27.1",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-merge": "^4.1.5"
   },
   "dependencies": {}
 }
