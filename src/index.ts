@@ -1,7 +1,7 @@
 /**
  * index.ts
  */
-export function hello (name: string): string {
+export function hello(name: string): string {
     return 'hello ' + name;
 }
 
