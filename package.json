@@ -48,5 +48,8 @@
     "webpack-common-shake": "2.1.0",
     "webpack-merge": "4.1.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "bn.js": "^4.11.8",
+    "js-encoding-utils": "^0.3.1"
+  }
 }
