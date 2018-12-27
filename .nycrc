@@ -1,5 +1,5 @@
 {
-  "include": [ "src/**/*.ts", "src/*.ts" ],
+  "include": [ "src/**/*.ts" ],
   "exclude": [ "**/*.d.ts/", "webpack.*.js", "**/dist/**", "**/obsolete/**", "**/node_modules/**", "**/test/**" ],
   "reporter": [ "lcov", "text-summary" ],
   "require": [ "ts-node/register", "source-map-support/register" ],

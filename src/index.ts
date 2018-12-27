@@ -2,12 +2,12 @@
  * index.ts
  */
 
+import BN from 'bn.js';
+import jseu from 'js-encoding-utils';
+import * as random from './random';
+
 const millinum: number = 1545288535676620;
-
 const goHex: string = 'e00c7d64bcf77115';
-
-const jseu: any = require('js-encoding-utils');
-const BN: any = require('bn.js');
 
 export function calc(): void {
   const bnNum = (new BN(millinum)).mul(new BN(1000));
@@ -19,7 +19,7 @@ export function calc(): void {
 }
 
 const nwbo = (num: any, len: number): Uint8Array => {
-  const arr = num.toBuffer('le', len);
+  const arr = num.toArray('le', len);
   return new Uint8Array(arr);
 };
 
@@ -35,6 +35,8 @@ const nwboReverse = (arr: Uint8Array): any => {
 
 export function hello(name: string): string {
   calc();
+  console.log(random.getRandomBytes(8));
+  console.log(random.getRandomAsciiString(16));
   return 'hello ' + name;
 }
 
