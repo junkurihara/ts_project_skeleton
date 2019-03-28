@@ -12,11 +12,11 @@ describe(`${envName}: Test skeleton`, () => {
 
         const val: string = hello.hello('omg');
         console.log(val);
-        expect(typeof val === "string").to.be.true;
+        expect(typeof val === 'string').to.be.true;
 
         const val2: string = hello.hello2('omgomg');
         console.log(val2);
-        expect(typeof val2 === "string").to.be.true;
+        expect(typeof val2 === 'string').to.be.true;
     });
 
 });

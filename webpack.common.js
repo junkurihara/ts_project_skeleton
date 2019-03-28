@@ -37,6 +37,9 @@ const webpackConfig = {
       }
     ]
   },
+  externals: { // for random just in playground
+    'crypto': true
+  },
   node: {
     fs: 'empty'
   }
