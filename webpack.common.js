@@ -34,7 +34,7 @@ const webpackConfig = {
           loader: 'ts-loader'
         }],
         exclude: path.join(__dirname, 'node_modules') // exclude: /node_modules/
-      }
+      },
     ]
   },
   externals: { // for random just in playground
