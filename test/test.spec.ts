@@ -17,6 +17,12 @@ describe(`${envName}: Test skeleton`, () => {
     const val2: string = hello.hello2('omgomg');
     console.log(val2);
     expect(typeof val2 === 'string').to.be.true;
+
+    const pemMap: {
+      [index: string]: string
+    } = {'private': 'PRIVATE KEY', 'public': 'PUBLIC KEY'};
+    console.log(pemMap);
+    console.log(pemMap['public']);
   });
 
 });
