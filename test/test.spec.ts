@@ -7,16 +7,16 @@ const message = env.message;
 const envName = env.envName;
 
 describe(`${envName}: Test skeleton`, () => {
-    it('Test 1', () => {
-        console.log(message);
+  it('Test 1', () => {
+    console.log(message);
 
-        const val: string = hello.hello('omg');
-        console.log(val);
-        expect(typeof val === 'string').to.be.true;
+    const val: string = hello.hello('omg');
+    console.log(val);
+    expect(typeof val === 'string').to.be.true;
 
-        const val2: string = hello.hello2('omgomg');
-        console.log(val2);
-        expect(typeof val2 === 'string').to.be.true;
-    });
+    const val2: string = hello.hello2('omgomg');
+    console.log(val2);
+    expect(typeof val2 === 'string').to.be.true;
+  });
 
 });

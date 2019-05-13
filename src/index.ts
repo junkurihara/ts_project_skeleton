@@ -37,12 +37,10 @@ export function hello(name: string): string {
   calc();
   console.log(random.getRandomBytes(8));
   console.log(random.getRandomAsciiString(16));
-  return 'hello ' + name;
+  return `hello ${name}`;
 }
 
-export const hello2 = (name: string): string => {
-  return 'hello hello ' + name;
-};
+export const hello2 = (name: string): string => `hello hello ${name}`;
 
 // const str: string = 'Hello TypeScript';
 // console.log(str);
