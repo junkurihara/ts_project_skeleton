@@ -6,7 +6,6 @@ const common = require('./webpack.common.js');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const ShakePlugin = require('webpack-common-shake').Plugin;
-const path = require('path');
 
 // webpack main configration
 const webpackConfig = {
@@ -15,21 +14,7 @@ const webpackConfig = {
     new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
     new webpack.optimize.MinChunkSizePlugin({minChunkSize: 1000}),
     new ShakePlugin()
-  ],
-  module:{
-    rules: [
-      {
-        test: /\.ts$/,
-        use: [{
-          loader: 'ts-loader',
-          options: {
-            configFile : 'tsconfig.json'
-          }
-        }],
-        exclude: path.join(__dirname, 'node_modules') // exclude: /node_modules/
-      }
-    ]
-  }
+  ]
 };
 
 module.exports = (env, argv) => {
