@@ -26,17 +26,7 @@ const webpackConfig = {
     extensions: ['.ts', '.tsx', '.js', '.jsx' ],
     modules: ['node_modules']
   },
-  module: {
-    rules: [
-      {
-        test: /\.ts$/,
-        use: [{
-          loader: 'ts-loader'
-        }],
-        exclude: path.join(__dirname, 'node_modules') // exclude: /node_modules/
-      },
-    ]
-  },
+  module: {},
   externals: { // for random just in playground
     'crypto': true
   },

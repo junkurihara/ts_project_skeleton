@@ -25,6 +25,16 @@ const webpackConfig = {
     rules: [
       {
         test: /\.ts$/,
+        use: [{
+          loader: 'ts-loader',
+          options: {
+            configFile : 'tsconfig.webpack.dev.json'
+          }
+        }],
+        exclude: path.join(__dirname, 'node_modules') // exclude: /node_modules/
+      },
+      {
+        test: /\.ts$/,
         exclude: [ path.resolve(__dirname, 'test') ],
         enforce: 'post',
         use: {
