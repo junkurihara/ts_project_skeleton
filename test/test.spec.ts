@@ -1,4 +1,4 @@
-import chai from 'chai';
+import * as chai from 'chai';
 const expect = chai.expect;
 import {getTestEnv} from './prepare';
 const env = getTestEnv();
@@ -14,15 +14,5 @@ describe(`${envName}: Test skeleton`, () => {
     console.log(val);
     expect(typeof val === 'string').to.be.true;
 
-    const val2: string = hello.hello2('omgomg');
-    console.log(val2);
-    expect(typeof val2 === 'string').to.be.true;
-
-    const pemMap: {
-      [index: string]: string
-    } = {'private': 'PRIVATE KEY', 'public': 'PUBLIC KEY'};
-    console.log(pemMap);
-    console.log(pemMap['public']);
   });
-
 });
