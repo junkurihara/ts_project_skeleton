@@ -48,9 +48,15 @@ module.exports = (config) => {
       },
       reports:
         {
-          'html': 'coverage/karma',
+          'html': {
+            directory: 'coverage',
+            subdirectory: 'karma/html'
+          },
           'text':'',
-          'lcovonly': 'coverage/karma',
+          'lcovonly': {
+            directory: 'coverage',
+            subdirectory: 'karma'
+          },
         }
     },
 
