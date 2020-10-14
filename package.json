@@ -14,7 +14,7 @@
     "webpack": "webpack --mode development --config webpack.config.js",
     "webpack:prod": "webpack --mode production --config webpack.config.js",
     "build": "rm -rf ./dist && yarn tsc && yarn webpack:prod",
-    "cleanup": "rm -rf ./dist coverage ./node_modules ./test/html/*.bundle.js ./test/html/test.html"
+    "cleanup": "rm -rf ./dist coverage ./node_modules"
   },
   "author": "Jun Kurihara",
   "license": "MIT",
