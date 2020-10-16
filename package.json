@@ -7,7 +7,7 @@
   "scripts": {
     "test": "yarn jest:node",
     "jest:node": "jest -c ./jest.config.node.js",
-    "jset:web": "jest -c ./jest.config.web.js",
+    "jest:web": "jest -c ./jest.config.web.js",
     "karma": "karma start",
     "karma:window": "yarn webpack && cross-env TEST_ENV=window karma start",
     "tsc": "tsc --build ./tsconfig.json",
