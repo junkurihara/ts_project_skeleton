@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "new_skeleton",
+  "name": "project_new_skeleton_typescript",
   "version": "1.0.0",
-  "description": "",
+  "description": "TypeScript project skeleton",
   "main": "dist/index.js",
   "scripts": {
     "test": "yarn jest:node",
