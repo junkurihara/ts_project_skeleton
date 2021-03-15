@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: test
 
 # Controls when the action will run.
 on:
@@ -26,16 +26,38 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm i -g npm
-      - run: npm i -g yarn
-      - run: yarn install
-#        - run: yarn test
-#
-#
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm キャッシュファイルは Linux/macOS の「~/.npm」に保存される
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Update npm and install packages
+        run: |
+          npm i -g npm@latest yarn@latest
+          yarn install
+
+      - name: Test with jest
+        run: yarn test
+
+      - name: Test with karma
+        run: yarn karma
+
+#      - name: Install lcov
+#        run: sudo apt install lcov
 #    # Steps represent a sequence of tasks that will be executed as part of the job
 #    steps:
 #      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
