@@ -48,7 +48,7 @@ jobs:
       - name: Update npm and install packages
         run: |
           npm i -g npm@latest yarn@latest
-          yarn install
+          npm install
 
       - name: Test with jest
         run: yarn test
