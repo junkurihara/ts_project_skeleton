@@ -3,7 +3,7 @@ defaults: &defaults
   working_directory: ~/repo
   docker:
     # specify the version you desire here
-    - image: circleci/node:lts-browsers
+    - image: circleci/node:latest-browsers
       auth:
         username: $DOCKERHUB_USER
         password: $DOCKERHUB_TOKEN
