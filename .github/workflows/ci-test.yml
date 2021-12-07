@@ -52,8 +52,8 @@ jobs:
       - name: Test with jest
         run: yarn test
 
-      - name: Test with karma
-        run: yarn karma
+      - name: Test with web-test-runner
+        run: yarn test:web
 
 #      - name: Install lcov
 #        run: sudo apt install lcov
