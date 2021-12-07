@@ -3,8 +3,6 @@
  */
 
 export const getTestEnv = async () => {
-  console.log(process.env.TEST_ENV);
-
   let expect;
   if(typeof window === 'undefined'){
     console.log('running on node.js');

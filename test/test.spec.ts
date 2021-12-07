@@ -4,7 +4,6 @@ import {getTestEnv} from './prepare';
 import * as lib from '../src/index';
 
 let expect: any;
-
 describe('Test skeleton', () => {
   before(async () => {
     const env = await getTestEnv();

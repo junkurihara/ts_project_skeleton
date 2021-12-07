@@ -12,7 +12,7 @@
     "analyze": "cem analyze --litelement",
     "build": "rm -rf dist && tsc && yarn webpack:prod && npm run analyze -- --exclude dist",
     "test": "nyc mocha \"test/**/*.ts\"",
-    "test:web": "tsc && wtr --coverage",
+    "test:web": "tsc -p ./tsconfig.wtr.json && wtr --coverage",
     "webpack": "webpack --mode development --config webpack.config.js",
     "webpack:prod": "webpack --mode production --config webpack.config.js",
     "cleanup": "rm -rf ./dist coverage ./node_modules, .nyc_output"
