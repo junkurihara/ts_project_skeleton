@@ -1,16 +1,19 @@
 // https://github.com/mtiller/ts-jest-sample
 
 import {getTestEnv} from './prepare';
-const env = getTestEnv();
-const hello = env.library;
+import * as lib from '../src/index';
 
-describe(`Test skeleton: Test from ${env.envName}`, () => {
+let expect: any;
+
+describe('Test skeleton', () => {
+  before(async () => {
+    const env = await getTestEnv();
+    expect = env.expect;
+  });
+
   it('Test 1', () => {
-    console.log(env.message);
-
-    const val: string = hello.hello('omg');
+    const val: string = lib.hello('omg');
     console.log(val);
-    expect(typeof val === 'string').toBeTruthy();
-
+    expect(typeof val == 'string').to.be.true;
   });
 });
