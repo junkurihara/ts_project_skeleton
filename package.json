@@ -15,7 +15,7 @@
     "test:web": "tsc -p ./tsconfig.wtr.json && wtr --coverage",
     "webpack": "webpack --mode development --config webpack.config.js",
     "webpack:prod": "webpack --mode production --config webpack.config.js",
-    "cleanup": "rm -rf ./dist coverage ./node_modules, .nyc_output"
+    "cleanup": "rm -rf ./dist coverage ./node_modules .nyc_output"
   },
   "author": "Jun Kurihara",
   "license": "MIT",
