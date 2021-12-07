@@ -49,11 +49,13 @@ jobs:
           npm i -g npm@latest yarn@latest
           npm install
 
-      - name: Test with jest
+      - name: Test with mocha
         run: yarn test
 
       - name: Test with web-test-runner
-        run: yarn test:web
+        run: |
+          yarn add --dev @types/estree
+          yarn test:web
 
 #      - name: Install lcov
 #        run: sudo apt install lcov
