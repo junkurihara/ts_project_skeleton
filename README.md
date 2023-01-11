@@ -1,6 +1,5 @@
 # Project Skeleton for TypeScript 'Universal' Library Development for Node.js and Browsers
 
-[![CircleCI](https://circleci.com/gh/junkurihara/ts_project_skeleton.svg?style=svg)](https://circleci.com/gh/junkurihara/ts_project_skeleton)
 [![codecov](https://codecov.io/gh/junkurihara/ts_project_skeleton/branch/develop/graph/badge.svg)](https://codecov.io/gh/junkurihara/ts_project_skeleton)
 ---
 
