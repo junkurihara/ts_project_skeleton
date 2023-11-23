@@ -8,11 +8,11 @@
   "exports": {
     ".": "./dist/src/index.js"
   },
+  "sideEffects": false,
   "scripts": {
-    "analyze": "cem analyze --litelement",
-    "build": "rm -rf dist && tsc && rpm run webpack:prod && npm run analyze -- --exclude dist",
-    "test": "nyc mocha \"test/**/*.ts\"",
-    "test:web": "tsc -p ./tsconfig.wtr.json && wtr --coverage",
+    "build": "rm -rf dist && tsc && pnpm webpack:prod && pnpm run analyze -- --exclude dist",
+    "test": "nyc mocha \"test/**/*.spec.*\"",
+    "test:web": "wtr --coverage",
     "webpack": "webpack --mode development --config webpack.config.js",
     "webpack:prod": "webpack --mode production --config webpack.config.js",
     "cleanup": "rm -rf ./dist coverage ./node_modules .nyc_output"
@@ -20,12 +20,12 @@
   "author": "Jun Kurihara",
   "license": "MIT",
   "devDependencies": {
-    "@custom-elements-manifest/analyzer": "0.9.0",
-    "@open-wc/testing": "3.2.2",
+    "@open-wc/testing": "4.0.0",
     "@types/chai": "4.3.11",
     "@types/mocha": "10.0.6",
     "@typescript-eslint/eslint-plugin": "6.12.0",
     "@typescript-eslint/parser": "6.12.0",
+    "@web/dev-server-esbuild": "^1.0.1",
     "@web/test-runner": "0.18.0",
     "chai": "4.3.10",
     "eslint": "8.54.0",
@@ -37,7 +37,6 @@
     "webpack": "5.89.0",
     "webpack-cli": "5.1.4"
   },
-  "dependencies": {},
   "nyc": {
     "include": [
       "src/**/*.ts"
@@ -58,6 +57,5 @@
     ],
     "sourceMap": true,
     "report-dir": "coverage/nyc"
-  },
-  "customElements": "custom-elements.json"
+  }
 }
